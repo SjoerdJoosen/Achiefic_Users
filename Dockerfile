@@ -4,8 +4,8 @@ COPY ./ ./
 
 RUN mvn --batch-mode -f /pom.xml clean package
 FROM openjdk:11-jdk
-EXPOSE 8080
+EXPOSE 8082
 COPY --from=BUILD /target ./target
 WORKDIR ./target
 
-CMD ["java", "-jar", "Story-BackEnd-Docker.jar"]
+CMD ["java", "-jar", "User-BackEnd-Docker.jar"]
