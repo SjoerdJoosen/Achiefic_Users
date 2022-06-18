@@ -47,13 +47,13 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=SjoerdJoosen_Achiefic_Stories
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=SjoerdJoosen_Achiefic_Users
     
     
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: sjoerdjoosen/story-backend-container
+        image: sjoerdjoosen/user-backend-container
         tags: latest
         registry: docker.io
         dockerfile: Dockerfile
